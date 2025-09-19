@@ -8,7 +8,7 @@
         body {
             font-family: Arial, sans-serif;
             background: #f8f0e3;
-            background-image: url('https://boteco3irmaos.github.io/pedido/fundoparte2.png');
+            background-image: url('https://github.com/boteco3irmaos/Pedido/blob/71285679607f76b48ded003eac77f164d5b07fef/fundoparte2.png?raw=true');
             background-size: cover;
             background-repeat: no-repeat;
             background-attachment: fixed;
@@ -21,7 +21,8 @@
             padding: 20px;
             box-sizing: border-box;
         }
-        
+        
+        /* Adiciona a definição da animação aqui */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -34,13 +35,14 @@
         }
 
         .container {
-            background: rgba(255, 243, 224, 0.9); 
+            background: rgba(255, 243, 224, 0.9); 
             padding: 30px;
             border-radius: 10px;
             box-shadow: 0 0 15px rgba(0,0,0,0.2);
             width: 90%;
             max-width: 500px;
             text-align: center;
+            /* Aplica a animação ao contêiner */
             animation: fadeInUp 1s ease-out;
             animation-fill-mode: forwards;
         }
@@ -209,7 +211,7 @@
         <h3>Nosso Cardápio:</h3>
         <div id="lista-bebidas">
             <div class="produto-card">
-                <img src="https://boteco3irmaos.github.io/pedido/brahma%20600ml.jpg" alt="Bhama 600ml">
+                <img src="https://raw.githubusercontent.com/mrdsomg-stack/pedido.html/224f7ae47f808de0dc7a5fa76c9012c94f1abf23/brahma%20600ml.jpg" alt="Bhama 600ml">
                 <div class="info-produto">
                     <h3>Brahma 600ml</h3>
                     <p>Cerveja Pilsen tradicional e refrescante</p>
@@ -217,7 +219,7 @@
                 </div>
                 <div class="acoes-produto">
                     <input type="number" class="quantidade-input" value="1" min="1" id="quantidade-bhama">
-                    <button class="adicionar-btn" 
+                    <button class="adicionar-btn" 
                             onclick="adicionarItemParaCard('Brahma 600ml', 8.50, 'quantidade-bhama')">
                         Adicionar
                     </button>
@@ -225,7 +227,7 @@
             </div>
 
             <div class="produto-card">
-                <img src="https://boteco3irmaos.github.io/pedido/Antarctica%20600ml.jpg" alt="Antarctica 600ml">
+                <img src="https://raw.githubusercontent.com/mrdsomg-stack/pedido.html/224f7ae47f808de0dc7a5fa76c9012c94f1abf23/Antarctica%20600ml.jpg" alt="Antarctica 600ml">
                 <div class="info-produto">
                     <h3>Antarctica 600ml</h3>
                     <p>A clássica cerveja Pilsen</p>
@@ -233,7 +235,7 @@
                 </div>
                 <div class="acoes-produto">
                     <input type="number" class="quantidade-input" value="1" min="1" id="quantidade-antarctica">
-                    <button class="adicionar-btn" 
+                    <button class="adicionar-btn" 
                             onclick="adicionarItemParaCard('Antarctica 600ml', 9.00, 'quantidade-antarctica')">
                         Adicionar
                     </button>
@@ -241,7 +243,7 @@
             </div>
 
             <div class="produto-card">
-                <img src="https://boteco3irmaos.github.io/pedido/coca-cola%201l.jpg" alt="Coca-Cola 1L">
+                <img src="https://raw.githubusercontent.com/mrdsomg-stack/pedido.html/224f7ae47f808de0dc7a5fa76c9012c94f1abf23/coca-cola%201l.jpg" alt="Coca-Cola 1L">
                 <div class="info-produto">
                     <h3>Coca-Cola 1L</h3>
                     <p>Refrigerante sabor cola</p>
@@ -249,28 +251,27 @@
                 </div>
                 <div class="acoes-produto">
                     <input type="number" class="quantidade-input" value="1" min="1" id="quantidade-coca">
-                    <button class="adicionar-btn" 
+                    <button class="adicionar-btn" 
                             onclick="adicionarItemParaCard('Coca-Cola 1L', 7.00, 'quantidade-coca')">
                         Adicionar
                     </button>
                 </div>
             </div>
-        </div>
-        <h3>Seu Pedido:</h3>
+            </div> <h3>Seu Pedido:</h3>
         <ul id="cesta-itens">
-        </ul>
+            </ul>
 
         <span id="total-geral">Total: R$ 0,00</span>
-        
+        
         <button onclick="enviar()">Fazer Pedido</button>
     </div>
 
     <script>
-        let itensDoPedido = [];
+        let itensDoPedido = []; // Array para armazenar os itens da cesta
 
         function renderizarCesta() {
             const cestaItensDiv = document.getElementById("cesta-itens");
-            cestaItensDiv.innerHTML = '';
+            cestaItensDiv.innerHTML = ''; // Limpa a lista antes de renderizar novamente
             let totalGeral = 0;
 
             if (itensDoPedido.length === 0) {
@@ -318,7 +319,7 @@
                     quantidade: quantidade
                 });
             }
-            
+            
             renderizarCesta();
         }
 
@@ -335,7 +336,7 @@
                 alert("Por favor, preencha Nome e Endereço!");
                 return;
             }
-            
+            
             if (itensDoPedido.length === 0) {
                 alert("Por favor, adicione pelo menos uma bebida ao pedido!");
                 return;
